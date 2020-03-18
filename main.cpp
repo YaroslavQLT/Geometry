@@ -1,10 +1,11 @@
 #include <QtWidgets>
 #include "mainwindow.h"
+#include "geometryplane.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow window;
-    window.show();
+    GeometryPlane plane;
+    plane.show();
     return a.exec();
 }

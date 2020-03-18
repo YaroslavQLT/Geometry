@@ -16,10 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    g_line.cpp \
+    g_point.cpp \
+    geometryobject.cpp \
+    geometryplane.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    g_line.h \
+    g_point.h \
+    geometryobject.h \
+    geometryplane.h \
     mainwindow.h
 
 FORMS +=
