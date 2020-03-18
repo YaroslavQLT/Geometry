@@ -2,25 +2,18 @@
 #define MAINWINDOW_H
 
 #include <QtWidgets>
+#include "geometryplane.h"
 
 class MainWindow : public QWidget
 {
     Q_OBJECT
-private:
-    //ui elements
-    QPushButton* button;
-    QLabel* textLabel;
-    QLineEdit* input;
 
-    //hotkey enter
-    QShortcut* key_enter;
+private:
+    GeometryPlane* plane;
+    QPushButton* button;
 
 public:
     MainWindow(QWidget* parent = nullptr);
-
-private slots:
-    void displayText();
-
 };
 
 #endif // MAINWINDOW_H

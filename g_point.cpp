@@ -17,3 +17,8 @@ QPoint G_Point::toPoint()
 {
     return point;
 }
+
+bool G_Point::isIn(QPoint _point)
+{
+    return point == _point;
+}

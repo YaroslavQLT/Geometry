@@ -14,6 +14,8 @@ public:
     void setName(QString newName);
     QString getName();
 
+    virtual bool isIn(QPoint point) = 0;
+
 protected:
     QString name;
 };

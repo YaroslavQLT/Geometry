@@ -10,7 +10,7 @@ class GeometryPlane : public QWidget
     Q_OBJECT
 
 public:
-    GeometryPlane();
+    GeometryPlane(QWidget* parent = nullptr);
     void addObject(GeometryObject* object);
 
 private:
@@ -18,6 +18,7 @@ private:
 
 protected:
     void paintEvent(QPaintEvent* event) override;
+    void mousePressEvent(QMouseEvent *event) override;
 };
 
 #endif // GEOMETRYPLANE_H

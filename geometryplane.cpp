@@ -1,7 +1,8 @@
 #include "geometryplane.h"
 #include "g_point.h"
 
-GeometryPlane::GeometryPlane()
+GeometryPlane::GeometryPlane(QWidget* parent)
+    :QWidget(parent)
 {
 
 }
@@ -21,5 +22,17 @@ void GeometryPlane::paintEvent(QPaintEvent* event)
          it++)
     {
         (*it)->draw(painter);
+    }
+}
+
+void GeometryPlane::mousePressEvent(QMouseEvent* event)
+{
+    QPoint point = event->pos();
+    for (auto it = objects.begin();
+         it != objects.end();
+         it++)
+    {
+        if ((*it)->isIn(point))
+            QMessageBox::information(nullptr, "You clicked the object", (*it)->getName());
     }
 }

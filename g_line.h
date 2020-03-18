@@ -15,6 +15,8 @@ public:
     G_Line(G_Point* _first, G_Point* _second, QString _name,
            QObject* parent = nullptr);
     void draw(QPainter& painter) override;
+
+    bool isIn(QPoint point) override;
 };
 
 #endif // G_LINE_H

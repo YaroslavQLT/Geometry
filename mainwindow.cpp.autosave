@@ -5,6 +5,7 @@ MainWindow::MainWindow(QWidget* parent)
 {
     QSplitter* splitter = new QSplitter(Qt::Horizontal);
     plane = new GeometryPlane;
+    plane->s
     button = new QPushButton;
     splitter->addWidget(plane);
     splitter->addWidget(button);
