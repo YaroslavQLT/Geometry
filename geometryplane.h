@@ -15,6 +15,8 @@ public:
 
 private:
     std::set<GeometryObject*> objects;
+    int mesh_coef;
+    QFont font;
 
 protected:
     void paintEvent(QPaintEvent* event) override;

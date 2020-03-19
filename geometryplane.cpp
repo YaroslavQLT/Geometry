@@ -4,7 +4,9 @@
 GeometryPlane::GeometryPlane(QWidget* parent)
     :QWidget(parent)
 {
-
+    mesh_coef = 50;
+    font.setFamily("Arial");
+    font.setPixelSize(10);
 }
 
 void GeometryPlane::addObject(GeometryObject* object)
@@ -15,10 +17,27 @@ void GeometryPlane::addObject(GeometryObject* object)
 void GeometryPlane::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
+    painter.setPen(QPen(Qt::lightGray, 0.9, Qt::SolidLine));
+
+    //draw numbers (coordinates)
+    for (int i = 1; i <= width()/mesh_coef; i++)
+    {
+        QFontMetrics metrics(font);
+        QString string = QString::number(i * mesh_coef);
+        QRect rect = metrics.boundingRect(string);
+        int x = i * mesh_coef - rect.width();
+        int y = rect.height();
+        painter.drawText(x, y, string);
+    }
+    for (int j = 1; j <= height()/mesh_coef; j++)
+    {
+        QString string = QString::number(j * mesh_coef);
+        int x = 0;
+        int y = j * mesh_coef;
+        painter.drawText(x, y, string);
+    }
 
     //draw mesh
-    const int mesh_coef = 50;
-    painter.setPen(QPen(Qt::lightGray, 0.9, Qt::SolidLine));
     for (int i = 1; i <= width()/mesh_coef; i++)
         painter.drawLine(i*mesh_coef, 0, i*mesh_coef, height());
     for (int j = 1; j <= height()/mesh_coef; j++)
