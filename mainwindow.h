@@ -3,6 +3,8 @@
 
 #include <QtWidgets>
 #include "geometryplane.h"
+#include "g_line.h"
+#include "g_point.h"
 
 class MainWindow : public QWidget
 {
@@ -10,7 +12,7 @@ class MainWindow : public QWidget
 
 private:
     GeometryPlane* plane;
-    QPushButton* button;
+    QListWidget* elements;
 
 public:
     MainWindow(QWidget* parent = nullptr);

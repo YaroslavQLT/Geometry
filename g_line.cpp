@@ -13,11 +13,12 @@ void G_Line::draw(QPainter& painter)
     first->draw(painter);
     second->draw(painter);
 
+    painter.setPen(QPen(Qt::blue, 3, Qt::SolidLine));
     painter.drawLine(first->toPoint(), second->toPoint());
 }
 
-bool G_Line::isIn(QPoint point)
+/*bool G_Line::isIn(QPoint point)
 {
     float k = static_cast<float>(first->toPoint().y()) / static_cast<float>(first->toPoint().x());
     return abs(static_cast<float>(k * point.x()) - static_cast<float>(point.y())) < 5.0f;
-}
+}*/
